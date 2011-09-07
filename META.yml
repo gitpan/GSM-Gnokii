@@ -1,0 +1,38 @@
+--- #YAML:1.0
+name:                    GSM-Gnokii
+version:                 0.06
+abstract:                Perl API to libgnokii
+license:                 perl
+author:              
+    - H.Merijn Brand <h.m.brand@xs4all.nl>
+generated_by:            Author
+distribution_type:       module
+provides:
+    GSM::Gnokii:
+        file:            Gnokii.pm
+        version:         0.06
+requires:     
+    perl:                5.008004
+    Carp:                0
+    DynaLoader:          0
+    Data::Peek:          0.32
+    JSON:                0
+recommends:     
+    perl:                5.014001
+    Data::Peek:          0.34
+configure_requires:
+    ExtUtils::MakeMaker: 0
+build_requires:
+    Config:              0
+test_requires:
+    Test::Harness:       0
+    Test::More:          0.88
+    Test::NoWarnings:    0
+test_recommends:
+    Test::More:          0.98
+resources:
+    license:             http://dev.perl.org/licenses/
+    repository:          http://repo.or.cz/w/GSM-Gnokii.git
+meta-spec:
+    version:             1.4
+    url:                 http://module-build.sourceforge.net/META-spec-v1.4.html
