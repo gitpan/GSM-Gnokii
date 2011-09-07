@@ -31,7 +31,7 @@
       "version" : "2.0",
       "url" : "https://metacpan.org/module/CPAN::Meta::Spec?#meta-spec"
       },
-   "version" : "0.06",
+   "version" : "0.07",
    "name" : "GSM-Gnokii",
    "license" : "perl",
    "build_requires" : {
@@ -39,7 +39,7 @@
       },
    "provides" : {
       "GSM::Gnokii" : {
-         "version" : "0.06",
+         "version" : "0.07",
          "file" : "Gnokii.pm"
          }
       },
