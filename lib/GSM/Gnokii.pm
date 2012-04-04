@@ -14,7 +14,7 @@ our @ISA = qw(Exporter DynaLoader);
 our %EXPORT_TAGS = ( all => [ qw( ) ] );
 our @EXPORT_OK   = ( @{ $EXPORT_TAGS{all} } );
 our @EXPORT      = qw( );
-our $VERSION     = "0.07";
+our $VERSION     = "0.08";
 
 bootstrap GSM::Gnokii $VERSION;
 
@@ -367,6 +367,11 @@ Returns a reference to a hash with the display status, all boolean, like:
   data_call_active => 0,
   keyboard_lock    => 0,
   sms_storage_full => 0,
+
+=head2 Ping
+
+Returns availability of the phone or undef if Ping is unimplemented in
+libgnokii.
 
 =head2 GetIMEI
 
@@ -730,6 +735,13 @@ H.Merijn Brand
 
 Author of GSMD::Gnokii is Konstantin Agouros. gnokii@agouros.de
 His code served as a huge inspiration to create this module.
+
+=head1 COPYRIGHT AND LICENSE
+
+ Copyright (C) 2011-2012 H.Merijn Brand. All rights reserved.
+
+This library is free software; you can redistribute it and/or modify it
+under the same terms as Perl itself.
 
 =head1 SEE ALSO
 

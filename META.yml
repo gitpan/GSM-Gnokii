@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name:                    GSM-Gnokii
-version:                 0.07
+version:                 0.08
 abstract:                Perl API to libgnokii
 license:                 perl
 author:              
@@ -9,8 +9,8 @@ generated_by:            Author
 distribution_type:       module
 provides:
     GSM::Gnokii:
-        file:            Gnokii.pm
-        version:         0.07
+        file:            lib/GSM/Gnokii.pm
+        version:         0.08
 requires:     
     perl:                5.008004
     Carp:                0
@@ -18,8 +18,8 @@ requires:
     Data::Peek:          0.32
     JSON:                0
 recommends:     
-    perl:                5.014001
-    Data::Peek:          0.34
+    perl:                5.014002
+    Data::Peek:          0.37
 configure_requires:
     ExtUtils::MakeMaker: 0
 build_requires:

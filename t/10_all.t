@@ -12,6 +12,7 @@ use GSM::Gnokii;
 my $gsm  = GSM::Gnokii->new ({ verbose => 1 })->connect ();
 
 ok (my $get = {
+    Ping	=> $gsm->Ping (),
     IMEI	=> $gsm->GetIMEI (),
     DateTime	=> $gsm->GetDateTime (),
     Security	=> $gsm->GetSecurity (),
@@ -34,6 +35,13 @@ ok (my $get = {
     CalNotes	=> $gsm->GetCalendarNotes (1, 3),
     Todo	=> $gsm->GetTodo (1, 3),
 #   WAPSettings	=> $gsm->GetWapSettings (2),
+
+    Versions	=> {
+	version	=> $gsm->version (),
+	VERSION	=> $GSM::Gnokii::VERSION,
+	module	=> $gsm->{gsm_gnokii_version},
+	gnokii	=> $gsm->{libgnokii_version},
+	},
     }, "Execute Get methods");
 
 DDumper $get;

@@ -30,6 +30,13 @@ static int			opt_v = 0;
 #  define gn_bool int
 #  endif
 
+#ifdef GN_OP_Ping
+#  define can_ping 1
+#else
+#  define can_ping 0
+#  define GN_OP_Ping 0
+#  endif
+
 #define unless(e) if (!(e))
 
 #define hv_del(hash,key)      hv_delete (hash, key, strlen (key), 0)
@@ -1262,6 +1269,25 @@ DeleteAllTodos (self)
    */
 
 void
+Ping (self)
+    HvObject	*self;
+
+  PPCODE:
+    gn_error	err;
+
+    if (opt_v) warn ("Ping ()\n");
+
+    unless (can_ping)
+	XSRETURN_UNDEF;
+
+    clear_data ();
+    if (gn_sm_func (self, GN_OP_Ping))
+	XS_RETURNi (1);
+
+    XS_RETURNi (0);
+    /* Ping */
+
+void
 GetDisplayStatus (self)
     HvObject	*self;
 
@@ -1751,7 +1777,6 @@ GetFile (self, path)
     snprintf (fi.name, sizeof (fi.name), "%s", path);
 
     data->file = &fi;
-    data->progress_indication = NULL;
     unless (gn_sm_func (self, GN_OP_GetFile)) {
 	set_errors ("GetFile () failed to get file");
 	XSRETURN_UNDEF;
