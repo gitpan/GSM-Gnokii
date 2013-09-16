@@ -14,7 +14,7 @@ our @ISA = qw(Exporter DynaLoader);
 our %EXPORT_TAGS = ( all => [ qw( ) ] );
 our @EXPORT_OK   = ( @{ $EXPORT_TAGS{all} } );
 our @EXPORT      = qw( );
-our $VERSION     = "0.08";
+our $VERSION     = "0.09";
 
 bootstrap GSM::Gnokii $VERSION;
 
@@ -92,6 +92,11 @@ GSM::Gnokii - Perl extension libgnokii
 
 GSM::Gnokii is a driver module to interface Perl with libgnokii.
 
+ At the moment there is no active development, as the author is not able
+ to connect the old phone to the new laptop anymore. 
+ This module has been requested to transfer maint to the libgnokii
+ development team.
+
 =head1 MEMORYTYPES
 
 The supported memory types are the ones that gnokii supports on the
@@ -138,11 +143,11 @@ For methods that return a status C<$err>, the return code in C<$err> is
 When undefined, you passed conflicting or illegal options. I this case,
 it is very likely that C<< $gsm->{ERROR} >> contains an explanation.
 
-=item 0
+=item C<0>
 
 All is well: operation completed successfully.
 
-=item *
+=item I<#>
 
 Any other value is either the return code from the call was performed,
 in which case the value of C<< $gsm->{ERROR} >> should have been set to tell
@@ -738,7 +743,7 @@ His code served as a huge inspiration to create this module.
 
 =head1 COPYRIGHT AND LICENSE
 
- Copyright (C) 2011-2012 H.Merijn Brand. All rights reserved.
+ Copyright (C) 2011-2013 H.Merijn Brand. All rights reserved.
 
 This library is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.

@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# Copyright (c) 2011-2012 H.Merijn Brand
+# Copyright (c) 2011-2013 H.Merijn Brand
 
 require 5.008004;
 use strict;
@@ -53,7 +53,8 @@ WriteMakefile (
 			-Wundef -Wunused
 			)),	# add -Wunused-but-set-variable for gcc-4.6
 		     "#OPTIMIZE" => "-O2 \$(GCC_WALL)",
-		    },
+		      TARFLAGS => "--format=ustar -c -v -f",
+		      },
     );
 
 1;
